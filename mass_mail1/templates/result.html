@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Validation Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <div class="container py-5">
+        <h1 class="mb-4 text-center">📬 Email Validation Results</h1>
+
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <div class="card border-success">
+                    <div class="card-header bg-success text-white">
+                        Valid Emails ({{ valid_emails|length }})
+                    </div>
+                    <div class="card-body" style="max-height: 300px; overflow-y: auto;">
+                        <ul class="list-group">
+                            {% for email in valid_emails %}
+                            <li class="list-group-item">{{ email }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="card-footer text-end">
+                        <a href="/download-valid" class="btn btn-success">Download Valid Emails</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mt-4 mt-md-0">
+                <div class="card border-danger">
+                    <div class="card-header bg-danger text-white">
+                        Invalid Emails ({{ invalid_emails|length }})
+                    </div>
+                    <div class="card-body" style="max-height: 300px; overflow-y: auto;">
+                        <ul class="list-group">
+                            {% for email in invalid_emails %}
+                            <li class="list-group-item">{{ email }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="card-footer text-end">
+                        <a href="/download-invalid" class="btn btn-danger">Download Invalid Emails</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="/" class="btn btn-secondary">🔄 Start Over</a>
+        </div>
+    </div>
+
+</body>
+</html>
