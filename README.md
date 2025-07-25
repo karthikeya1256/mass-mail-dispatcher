@@ -50,7 +50,8 @@ Edit
 
 ```bash
 git clone https://github.com/karthikeya1256/mass-mail-dispatcher.git
-cd mass-mail-dispatcher
+cd mass-mail-dispatcher 
+```
 
 ## 📸 Screenshots
 
